@@ -1,0 +1,12 @@
+pid: /var/run/riemann-dash.pid
+log: /var/log/riemann-dash.log
+timeout: 30
+port: <%=node['riemann']['dashboard']['port']%>
+max_conns: 1024
+rackup: <%=node['riemann']['dashboard']['home']%>/config.ru
+max_persistent_conns: 512
+environment: production
+address: <%=node['riemann']['dashboard']['bind_ip']%>
+servers: 1
+user: <%=node['riemann']['dashboard']['user']%>
+daemonize: true
